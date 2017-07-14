@@ -1,7 +1,7 @@
 {
   "name": "panoview",
   "version": "1.0.0",
-  "description": "A javascript library to view Amsterdam muncipality panorama images.",
+  "description": "Viewer for Amsterdam muncipality panorama images.",
   "main": "dist/panoviewer.min.js",
   "scripts": {
     "build": "webpack",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DatapuntAmsterdam/PanoViewer.git"
+    "url": "git+https://github.com/Lytrix/PanoViewer.git"
   },
   "keywords": [],
   "author": "Datapunt",

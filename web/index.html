@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="panoview.css" />
+  </head>
+  <body>
+    <script src="../dist/panoviewer.min.js"></script>
+    <div id="main">
+      <div id="pano" ></div>
+      <div id="compass-container">
+        <img src="compass.png" class="compass">
+      </div>
+    </div>
+    <script>
+      let pv = null;
+      function turnCompass(params) {
+        const direction = params.yaw;
+        const compass = document.getElementById('compass-container');
+        compass.setAttribute('style', 'transform: rotateZ(' + direction + 'rad);');
+      }
+
+      function blinkCompass(params) {
+        const compass = document.getElementById('compass-container');
+        compass.classList.toggle('enlarge');
+      }
+
+      function load(lat, lon) {
+        document.getElementById('main');
+        pv = new PanoViewer('#pano');
+        pv.updateConfig({
+          CALLBACKS: {
+            change: turnCompass,
+            active: blinkCompass,
+            inactive: blinkCompass
+          }
+        });
+        pv.loadPanorama(lat, lon);
+      }
+      document.addEventListener('keyup', function (evt) {
+        if (evt.keyCode === 27) {
+          document.getElementById('main');
+        }
+      });
+
+     // Load with URL Params lat & lon e.g. https://www.yoursite.com/panoviewer/?lat=52.302919&lon=4.857236
+      window.onload = function() {
+        var urlString = window.document.URL.toString();
+        var url = new URL(urlString);
+        console.log(url);
+        if (url.searchParams.get("lat") == null || url.searchParams.get("lon") == null) {
+          var lat = 52.3730353
+          var lon =  4.8932471         
+        } else {
+          var lat = url.searchParams.get("lat");
+          var lon = url.searchParams.get("lon");
+
+        }
+        console.log(lat, lon);
+        load(lat, lon)
+        };
+    </script>
+ </body>
+</html>
