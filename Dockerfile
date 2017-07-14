@@ -22,7 +22,7 @@ RUN git config --global url.https://github.com/.insteadOf git://github.com/ \
   && npm install \
   && npm run build
 
-RUN mv web /var/www/html/
+RUN mv panoviewer /var/www/html
 RUN mv LICENSE README.md /var/www/html
 RUN mv dist /var/www/html/
 
