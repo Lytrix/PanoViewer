@@ -4,6 +4,7 @@
   "description": "Viewer for Amsterdam muncipality panorama images.",
   "main": "dist/panoviewer.min.js",
   "scripts": {
+    "start": "webpack",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
