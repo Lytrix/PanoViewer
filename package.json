@@ -32,8 +32,7 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "ify-loader": "^1.0.4",
-    "marzipano": "^0.5.4",
-    "webpack": "^2.6.1"
+    "marzipano": "^0.5.4"
   },
   "engines": {
     "node": "7.4.0",
