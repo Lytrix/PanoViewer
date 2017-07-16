@@ -4,8 +4,6 @@
   "description": "Viewer for Amsterdam muncipality panorama images.",
   "main": "dist/panoviewer.min.js",
   "scripts": {
-    "start": "npm run build",
-    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +29,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "mime": "1.3.6",
     "ify-loader": "^1.0.4",
     "marzipano": "^0.5.4"
   },
